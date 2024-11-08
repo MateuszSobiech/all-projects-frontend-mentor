@@ -1,0 +1,49 @@
+.filters {
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 4px;
+  box-shadow: 0px 5px 18px -10px var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  visibility: hidden;
+  margin-bottom: 15px;
+
+  &.visible {
+    visibility: visible;
+    margin-bottom: 50px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  div {
+    padding-left: 8px;
+    border-radius: 4px;
+    background-color: var(--light-cyan);
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  button {
+    color: white;
+    background-color: var(--primary);
+    padding: 0 4px;
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+.listItem {
+  display: flex;
+  gap: 8px;
+}
+
+.clear {
+  color: var(--dark-cyan);
+}

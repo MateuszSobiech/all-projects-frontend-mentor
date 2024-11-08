@@ -1,0 +1,13 @@
+.image {
+  background-image: url(/starter/images/bg-header-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--primary);
+
+  height: 170px;
+}
+
+.main {
+  margin-top: -50px;
+  padding: 20px;
+}
