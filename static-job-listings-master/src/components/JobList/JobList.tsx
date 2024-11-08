@@ -11,29 +11,30 @@ export interface JobListProps {
 
 export const JobList = ({ filters, onClickAddFilter }: JobListProps) => {
   const [jobs, setJobs] = useState<Job[]>([]);
-  const [error, setError] = useState('')
+  const [error, setError] = useState('');
 
-  const filteredJobs = filters.length > 0
-    ? jobs.filter((job) => {
-        const categories = [job.role, job.level, ...job.languages, ...job.tools];
-        return [...filters].every((filter) => categories.includes(filter));
-      })
-    : jobs;
+  const filteredJobs =
+    filters.length > 0
+      ? jobs.filter((job) => {
+          const categories = [job.role, job.level, ...job.languages, ...job.tools];
+          return [...filters].every((filter) => categories.includes(filter));
+        })
+      : jobs;
 
   useEffect(() => {
     (async () => {
       try {
         setJobs(await getJobs());
       } catch (error) {
-        if(error instanceof Error) {
-          setError(error.message)
+        if (error instanceof Error) {
+          setError(error.message);
         }
       }
     })();
   }, []);
 
-  if(error !== '') {
-    return <h1 style={{fontSize: 64}}>{error}</h1>
+  if (error !== '') {
+    return <h1 style={{ fontSize: 64 }}>{error}</h1>;
   }
 
   return (

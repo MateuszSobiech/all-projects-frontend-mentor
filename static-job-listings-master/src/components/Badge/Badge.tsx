@@ -9,7 +9,7 @@ const baseStyles: CSSProperties = {
   textTransform: 'uppercase',
   fontSize: 13,
   lineHeight: 2,
-}
+};
 
 const styles: { [variant in Variants]: CSSProperties } = {
   primary: {
