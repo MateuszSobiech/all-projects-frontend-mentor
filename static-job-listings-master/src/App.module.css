@@ -5,9 +5,19 @@
   background-color: var(--primary);
 
   height: 170px;
+
+  @media (min-width: 1200px) {
+  background-image: url(/starter/images/bg-header-desktop.svg);
+  }
 }
 
 .main {
   margin-top: -50px;
   padding: 20px;
+
+  @media (min-width: 1200px) {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

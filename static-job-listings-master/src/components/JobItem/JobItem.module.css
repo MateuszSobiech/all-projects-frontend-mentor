@@ -22,6 +22,26 @@
     margin: 16px 0;
     color: var(--dark-cyan);
   }
+
+  @media (min-width: 1200px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .leftContainer {
+      display: flex;
+      gap: 24px;
+    }
+
+    img {
+      position: inherit;
+      width: auto;
+    }
+
+    hr {
+      display: none;
+    }
+  }
 }
 
 .info {
@@ -41,7 +61,12 @@
 }
 
 .position {
+  cursor: pointer;
   font-weight: 700;
+
+  &:hover {
+    color: var(--primary);
+  }
 }
 
 .details {
@@ -61,10 +86,16 @@
   gap: 16px;
 
   button {
+    height: max-content;
     padding: 4px 8px;
     border-radius: 4px;
     background-color: var(--light-cyan);
     color: var(--primary);
     font-weight: 700;
+
+    &:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
   }
 }
