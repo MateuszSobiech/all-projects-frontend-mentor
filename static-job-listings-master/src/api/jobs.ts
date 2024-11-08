@@ -10,7 +10,7 @@ function assertsJobs(data: unknown[]): asserts data is Job[] {
 }
 
 export const getJobs = async (): Promise<Job[]> => {
-  const response = await fetch('/starter/data.json');
+  const response = await fetch('src/data/data.json');
 
   if (!response.ok) {
     throw new Error('Problem to fetch jobs from JSON.');

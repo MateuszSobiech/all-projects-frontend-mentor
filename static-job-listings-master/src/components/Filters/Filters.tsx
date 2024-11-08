@@ -19,7 +19,7 @@ export const Filters = ({
           <div key={filter} className={styles.listItem}>
             <span>{filter}</span>
             <button onClick={() => onClickDeleteFilter(filter)}>
-              <img src='starter/images/icon-remove.svg' />
+              <img src='src/assets/images/icon-remove.svg' />
             </button>
           </div>
         ))}
