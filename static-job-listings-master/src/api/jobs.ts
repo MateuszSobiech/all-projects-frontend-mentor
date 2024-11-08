@@ -1,15 +1,24 @@
-import { Job } from "../types/Job";
+import { Job } from '../types/Job';
 
-function isDataJobs(data: unknown): asserts data is Job[] {}
+function assertsJobs(data: unknown[]): asserts data is Job[] {
+  const has = Object.prototype.hasOwnProperty;
+  const job = data[0];
+
+  if (!has.call(job, 'id') || !has.call(job, 'company') || !has.call(job, 'logo')) {
+    throw new Error('Problem while fetching jobs, object is not a job.');
+  }
+}
 
 export const getJobs = async (): Promise<Job[]> => {
   const response = await fetch('/starter/data.json');
 
-      if (!response.ok) {
-        throw new Error('Problem to fetch jobs from JSON.');
-      }
+  if (!response.ok) {
+    throw new Error('Problem to fetch jobs from JSON.');
+  }
 
-      const data = await response.json() as unknown;
+  const data = (await response.json()) as unknown[];
 
-      return data as Job[];
-}
+  assertsJobs(data);
+
+  return data;
+};
