@@ -49,5 +49,6 @@ export default tseslint.config({
 })
 ```
 
-Other possible solution:
+Other possible solution: 
+
 [https://practice-26-jobs-list-no-api.onrender.com/ , https://github.com/SvitlanaSuslenkova/Practice-26-jobs-list-no-api]
