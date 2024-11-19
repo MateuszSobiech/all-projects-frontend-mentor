@@ -1,4 +1,4 @@
-.filters {
+.filtersWrapper {
   padding: 20px;
   background-color: var(--white);
   border-radius: 4px;
@@ -55,7 +55,7 @@
   gap: 8px;
 }
 
-.clear {
+.clearButton {
   color: var(--dark-cyan);
 
   &:hover {

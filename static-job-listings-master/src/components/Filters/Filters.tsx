@@ -1,4 +1,5 @@
 import { JobFilter } from '../../types/Job';
+import iconRemove from '/src/assets/images/icon-remove.svg'
 import styles from './Filters.module.css';
 
 interface FiltersProps {
@@ -13,18 +14,18 @@ export const Filters = ({
   onClickDeleteAllFilters,
 }: FiltersProps) => {
   return (
-    <div className={`${styles.filters} ${filters.length > 0 ? styles.visible : ''}`}>
-      <div className={styles.list}>
+    <div className={`${styles.filtersWrapper} ${filters.length > 0 ? styles.visible : ''}`}>
+      <ul className={styles.list}>
         {filters.map((filter) => (
-          <div key={filter} className={styles.listItem}>
+          <li key={filter} className={styles.listItem}>
             <span>{filter}</span>
             <button onClick={() => onClickDeleteFilter(filter)}>
-              <img src='src/assets/images/icon-remove.svg' />
+              <img src={iconRemove} />
             </button>
-          </div>
+          </li>
         ))}
-      </div>
-      <button className={styles.clear} onClick={onClickDeleteAllFilters}>
+      </ul>
+      <button className={styles.clearButton} onClick={onClickDeleteAllFilters}>
         Clear
       </button>
     </div>

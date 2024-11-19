@@ -39,10 +39,9 @@ export const JobList = ({ filters, onClickAddFilter }: JobListProps) => {
 
   return (
     <div className={styles.list}>
-      {jobs &&
-        filteredJobs.map((job) => (
-          <JobItem key={job.id} job={job} onClickAddFilter={onClickAddFilter} />
-        ))}
+      {filteredJobs.map((job) => (
+        <JobItem key={job.id} job={job} onClickAddFilter={onClickAddFilter} />
+      ))}
     </div>
   );
 };

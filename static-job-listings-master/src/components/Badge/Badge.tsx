@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 type Variants = 'primary' | 'dark';
 
@@ -24,11 +24,11 @@ const styles: { [variant in Variants]: CSSProperties } = {
 
 interface BadgeProps {
   variant: Variants;
-  text: string;
+  children: ReactNode;
 }
 
-export const Badge = ({ variant, text }: BadgeProps) => {
+export const Badge = ({ variant, children }: BadgeProps) => {
   const variantStyles = styles[variant];
 
-  return <div style={variantStyles}>{text}</div>;
+  return <div style={variantStyles}>{children}</div>;
 };
